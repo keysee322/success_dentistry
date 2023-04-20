@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+html {
+  font-size: 24px;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul.slick-dots,
+ul.breadcrumb {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+img {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  cursor: default;
+  background-color: rgb(211, 251, 238);
+  color: rgb(36, 36, 36);
+  min-height: 100vh;
+}
+
+section {
+  position: relative;
+}
+
+p {
+  color: rgb(36, 36, 36);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+  width: 1216px;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  color: #2e363e;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: rgb(36, 36, 36);
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.34, 0.73, 0.47, 0.97);
+}
+
+textarea,
+button,
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Nunito Sans", sans-serif;
+  border: none;
+  outline: none;
+}
+
+textarea[disabled],
+button[disabled],
+input[disabled] {
+  cursor: default;
+  opacity: 0.7;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  font-size: 1rem;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
