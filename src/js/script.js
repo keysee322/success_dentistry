@@ -5,6 +5,15 @@ function stopScroll(item = 'body') {
   $(item).attr('style', 'overflow: hidden; padding-right: ' + scrollbarWidth + 'px');
 }
 
+function moreToggle(button, target) {
+  if ($(button).hasClass('active')) {
+    $(target).height(160);
+  } else {
+    $(target).height($(target)[0].scrollHeight);
+  }
+  $(button).toggleClass('active');
+}
+
 // возвращаем скролл для body
 function freeScroll(item = 'body') {
   $(item).attr('style', '');
@@ -38,16 +47,10 @@ $(document).ready(() => {
 
     return false;
   });
-
-  $('.header__burger-button').on('click', function () {
-    $('.burger').addClass('active');
-    stopScroll();
+  $('.about__button').on('click', function () {
+    moreToggle(this, '.about__text');
   });
-  $('.burger__close').on('click', function () {
-    $('.burger').removeClass('active');
-    freeScroll();
-  });
-  $('.left-menu__title').on('click', function () {
-    $('.left-menu').toggleClass('active');
+  $('.text__button').on('click', function () {
+    moreToggle(this, '.text__text');
   });
 });

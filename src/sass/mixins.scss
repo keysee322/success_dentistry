@@ -116,6 +116,9 @@
   background-color: $button;
   transition: $quad;
   color: #fff;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
 
   &:hover {
     color: $button;
@@ -134,6 +137,7 @@
   padding: 0 30px;
   color: $button;
   background-color: $bgc-light;
+  border-radius: 24px;
   transition: $quad;
   &:hover {
     color: $bgc-light;

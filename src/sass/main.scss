@@ -2,7 +2,7 @@
 @import 'mixins';
 
 html {
-  font-size: 24px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 ul {
@@ -28,7 +28,7 @@ img {
 body {
   font-family: $font; // FF MAIN
   cursor: default;
-  background-color: $bgc;
+  background-color: $bgc-light;
   color: $text;
   min-height: 100vh;
 }
@@ -39,7 +39,7 @@ section {
 
 p {
   color: $text;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -48,7 +48,7 @@ p {
 }
 .wrapper {
   position: relative;
-  width: 1216px;
+  width: 1200px;
   height: 100%;
   margin: 0 auto;
   max-width: 1440px;
@@ -58,20 +58,27 @@ p {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
+  font-family: $font;
+  font-weight: 700;
+  line-height: 54.56px;
+  color: $text;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: $font;
+  font-weight: 700;
+  color: #2e363e;
+}
+
+h3 {
+  font-size: 36px;
   font-family: $font;
   font-weight: 700;
 }
 
-h2 {
-  font-size: 35px;
-  font-family: $font;
-  font-weight: 500;
-  color: #2e363e;
-  text-transform: uppercase;
-}
-
-h3 {
+h4 {
   font-size: 24px;
   font-family: $font;
   font-weight: 700;
@@ -112,5 +119,585 @@ input {
     font-size: 1rem;
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.header {
+  height: 108px;
+  font-weight: 700;
+
+  .wrapper {
+    align-items: flex-end;
+  }
+  &__logo {
+    transition: cubic-bezier(0.34, 0.73, 0.47, 0.97) 0.5s;
+  }
+  &__logo-container {
+    display: flex;
+    margin-right: 40px;
+
+    &:hover {
+      .header__logo {
+        transform: rotateX(360deg);
+      }
+    }
+  }
+  &__nav {
+    &-container {
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 58%;
+  }
+  &__other {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  &__time {
+    font-weight: 400;
+    display: flex;
+
+    div {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__phone {
+    display: flex;
+    transition: $quad;
+
+    svg {
+      margin-right: 8px;
+      transition: $quad;
+    }
+    &:hover {
+      color: $button;
+    }
+  }
+  &__place {
+    @extend %link;
+    background-color: $bgc;
+  }
+  &__link {
+    @extend %link;
+    color: $text;
+    padding: 0 16px;
+    height: 36px;
+  }
+}
+.promo {
+  padding: 50px 0;
+  width: 100%;
+  overflow: hidden;
+  .wrapper {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__content {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 50%;
+    height: 90%;
+    background-color: $bgc;
+    border-radius: 40px;
+    border: 1px solid $button;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+  &__button {
+    @extend %button;
+  }
+  .owl-carousel .owl-item img {
+    height: 550px;
+    width: 60%;
+    border-radius: 40px;
+  }
+}
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  margin: auto;
+  margin-top: 26px;
+}
+.owl-carousel button.owl-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $grey;
+  transition: $quad;
+  margin-left: 20px;
+
+  &.active {
+    background-color: $button;
+  }
+
+  &:hover {
+    background-color: $bgc;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.service {
+  border-radius: 60px;
+  background-color: $bgc;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px 30px;
+    grid-template-areas:
+      '. . . . . .'
+      '. . . . . .';
+  }
+  &__item {
+    position: relative;
+    grid-column: span 2;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 40px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    border: 1px solid $button;
+    box-shadow: 0px 20px 40px rgba(5, 122, 83, 0.08);
+
+    &:nth-child(5n + 1) {
+      grid-column: span 3;
+    }
+    &:nth-child(5n + 2) {
+      grid-column: span 3;
+    }
+  }
+  &__title {
+    color: $button;
+    max-width: 70%;
+  }
+  &__description {
+    color: #4d4d4d;
+    margin-top: 10px;
+    max-width: 70%;
+  }
+  &__link {
+    @extend %link;
+    background-color: $bgc;
+    font-weight: 700;
+    margin-top: auto;
+  }
+  &__img {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 48px;
+    height: 48px;
+  }
+}
+.about,
+.text {
+  padding-top: 40px;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    width: 48%;
+  }
+  &__text {
+    margin-top: 10px;
+    height: 160px;
+    overflow: hidden;
+    transition: $quad;
+
+    &.active {
+      height: auto;
+    }
+  }
+  &__img {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48%;
+
+      &:hover {
+        .about__img {
+          transform: rotateZ(360deg);
+        }
+      }
+    }
+    width: 200px;
+    transition: cubic-bezier(0.34, 0.73, 0.47, 0.97) 0.5s;
+  }
+  &__button {
+    @extend %button;
+    justify-content: flex-start;
+    padding: 0;
+    padding-bottom: 10px;
+    height: auto;
+    position: relative;
+    background-color: $bgc-light;
+    color: #009d9a;
+    width: 100%;
+    border-radius: unset;
+    box-shadow: 0px 0px 50px 50px rgba(240, 255, 250, 1);
+    z-index: 1;
+    transition: $quad;
+
+    &:hover {
+      svg {
+        margin-left: 35px;
+      }
+    }
+    & > svg {
+      margin-left: 12px;
+      transition: $quad;
+    }
+    &.active {
+      box-shadow: 0px 0px 50px 50px rgba(240, 255, 250, 0);
+      margin-top: 20px;
+      & > svg {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+.staff {
+  padding: 40px 0;
+  margin-top: 80px;
+  &__content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 60px;
+    grid-template-areas: '. . . .';
+  }
+  &__item {
+    &:hover {
+      .staff__img {
+        transform: translate(0, -20px);
+      }
+      .staff__name {
+        color: $button;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 40px;
+    transition: $quad;
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: $quad;
+  }
+  &__post {
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 16px;
+    background-color: #f5f5f5;
+    color: #4d4d4d;
+    width: fit-content;
+    padding: 3px 10px;
+  }
+  &__more {
+    @extend %link;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: $bgc;
+    width: 200px;
+  }
+}
+
+.reviews {
+  margin-top: 80px;
+  &__content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px 30px;
+    grid-template-areas: '. . .';
+  }
+  &__name {
+    margin-top: 10px;
+    font-weight: 700;
+  }
+  &__more {
+    @extend %link;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: $bgc;
+    width: 200px;
+  }
+}
+.map {
+  margin-top: 120px;
+  padding-bottom: 60px;
+  &__content {
+    margin-top: 50px;
+    border-radius: 40px;
+    width: 100%;
+    height: 480px;
+  }
+}
+.contacts {
+  padding-bottom: 80px;
+  .wrapper {
+    align-items: baseline;
+  }
+  &__container {
+    width: 50%;
+  }
+  &__content {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 46%;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__soc {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      width: 30px;
+      height: 30px;
+      &:hover {
+        svg {
+          transform: translate(0, -20px);
+        }
+      }
+      & > svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: $quad;
+      }
+    }
+  }
+  &__phone,
+  &__email {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: $quad;
+
+    &:hover {
+      color: $button;
+      svg {
+        transform: translate(-20px, 0);
+      }
+    }
+    & > svg {
+      margin-right: 10px;
+      transition: $quad;
+    }
+  }
+  &__right {
+    font-size: 16px;
+    width: 46%;
+    background-color: $bgc;
+    border-radius: 20px;
+    padding: 20px;
+
+    &-title {
+      font-weight: 700;
+      color: $button;
+    }
+    &-block {
+      margin-top: 20px;
+    }
+  }
+  &__form {
+    padding: 40px;
+    padding-top: 24px;
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0px 20px 40px rgba(5, 122, 83, 0.08);
+    border-radius: 40px;
+    margin-right: 10%;
+
+    &-title {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 26px;
+    }
+  }
+  &__input {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: $bgc-light;
+    padding: 13px 16px;
+    border: 1px solid $bgc;
+    border-radius: 8px;
+    &::placeholder {
+      color: #242424;
+      font-family: $font;
+      font-size: 16px;
+    }
+  }
+  &__submit {
+    @extend %button;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+}
+
+.checkbox label {
+  cursor: pointer;
+}
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: baseline;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox + label::before {
+  content: '';
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid $button;
+  border-radius: 6px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transition: $quad;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: $bgc;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active + label::before {
+  background-color: $bgc-light;
+  border-color: $bgc;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus + label::before {
+  box-shadow: 0 0 0 0.2rem $bgc;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked) + label::before {
+  border-color: $bgc-light;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox:checked + label::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='146F68' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 90px;
+  background-color: $button;
+  border-radius: 60px 60px 0px 0px;
+  color: #fff;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    @extend %button;
+    background-color: $button;
+    font-weight: 700;
+    color: #fff;
+  }
+  &__logo {
+    margin-right: 20px;
+  }
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+  }
+  &__other {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__info {
+    width: 30%;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  &__politics {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: underline;
+    text-align: end;
+    width: 170px;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
