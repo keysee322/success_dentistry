@@ -33,7 +33,14 @@ $(document).ready(() => {
     smartSpeed: 800,
     autoplayHoverPause: true,
   });
-
+  $('.header__burger-button').on('click', function () {
+    $('.burger').addClass('active');
+    stopScroll();
+  });
+  $('.burger__close').on('click', function () {
+    $('.burger').removeClass('active');
+    freeScroll();
+  });
   $('.item__button').on('click', function () {
     $('html, body').animate(
       {

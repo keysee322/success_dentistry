@@ -10,7 +10,8 @@
 .contacts__submit,
 .about__button,
 .text__button,
-.promo__button {
+.promo__button,
+.product__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +29,13 @@
 .contacts__submit:hover,
 .about__button:hover,
 .text__button:hover,
-.promo__button:hover {
+.promo__button:hover,
+.product__button:hover {
   color: rgb(20, 111, 104);
   background-color: rgb(240, 255, 250);
 }
 
+.catalog__link,
 .reviews__more,
 .staff__more,
 .service__link,
@@ -49,6 +52,7 @@
   transition: 0.3s cubic-bezier(0.34, 0.73, 0.47, 0.97);
 }
 
+.catalog__link:hover,
 .reviews__more:hover,
 .staff__more:hover,
 .service__link:hover,
@@ -266,18 +270,21 @@ input:-webkit-autofill:focus {
   height: 36px;
 }
 
-.promo {
+.promo,
+.product {
   padding: 50px 0;
   width: 100%;
   overflow: hidden;
 }
 
-.promo .wrapper {
+.promo .wrapper,
+.product .wrapper {
   justify-content: flex-end;
   align-items: center;
 }
 
-.promo__content {
+.promo__content,
+.product__content {
   position: absolute;
   left: 0;
   z-index: 1;
@@ -293,13 +300,20 @@ input:-webkit-autofill:focus {
   align-items: baseline;
 }
 
-.promo__text {
+.promo__img,
+.product__img {
+  height: 460px;
+}
+
+.promo__text,
+.product__text {
   margin-top: 20px;
   margin-bottom: 50px;
   font-weight: 700;
 }
 
-.promo .owl-carousel .owl-item img {
+.promo .owl-carousel .owl-item img,
+.product .owl-carousel .owl-item img {
   height: 550px;
   width: 60%;
   border-radius: 40px;
@@ -377,6 +391,10 @@ input:-webkit-autofill:focus {
 .service__title {
   color: rgb(20, 111, 104);
   max-width: 70%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .service__description {
@@ -522,6 +540,10 @@ input:-webkit-autofill:focus {
   transition: 0.3s cubic-bezier(0.34, 0.73, 0.47, 0.97);
 }
 
+.staff__container {
+  width: 100%;
+}
+
 .staff__post {
   font-weight: 400;
   font-size: 14px;
@@ -533,6 +555,7 @@ input:-webkit-autofill:focus {
 }
 
 .staff__more {
+  font-weight: 700;
   margin: 0 auto;
   margin-top: 80px;
   background-color: rgb(211, 251, 238);
@@ -558,6 +581,7 @@ input:-webkit-autofill:focus {
 }
 
 .reviews__more {
+  font-weight: 700;
   margin: 0 auto;
   margin-top: 80px;
   background-color: rgb(211, 251, 238);
@@ -595,7 +619,7 @@ input:-webkit-autofill:focus {
 }
 
 .contacts__left {
-  width: 46%;
+  width: fit-content;
   font-size: 18px;
   font-weight: 700;
 }
@@ -830,4 +854,246 @@ input:-webkit-autofill:focus {
 
 .footer__politics:hover {
   text-decoration: none;
+}
+
+.breadcrumbs {
+  padding: 10px 0;
+  margin-top: 12px;
+}
+
+.catalog {
+  padding: 80px 0;
+  background-color: rgb(211, 251, 238);
+  border-radius: 80px;
+}
+
+.catalog__title {
+  margin-bottom: 30px;
+}
+
+.catalog__item {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  height: 200px;
+  margin-top: 30px;
+}
+
+.catalog__item:first-child {
+  margin-top: 0;
+}
+
+.catalog__item:hover .catalog__item-content {
+  margin-left: -20px;
+}
+
+.catalog__item:hover .catalog__text {
+  -webkit-line-clamp: 5;
+}
+
+.catalog__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: 0px 20px 40px rgba(5, 122, 83, 0.08);
+  border-radius: 20px;
+  margin-left: -60px;
+  z-index: 0;
+  transition: 0.3s cubic-bezier(0.34, 0.73, 0.47, 0.97);
+  padding: 20px 40px;
+}
+
+.catalog__img {
+  position: relative;
+  width: 240px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.catalog__block:nth-child(1) {
+  width: 70%;
+}
+
+.catalog__block:nth-child(2) {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.catalog__price {
+  color: rgb(20, 111, 104);
+}
+
+.catalog__link {
+  font-weight: 700;
+  background-color: rgb(211, 251, 238);
+}
+
+.catalog__text {
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product .wrapper {
+  justify-content: flex-start;
+}
+
+.product__content {
+  left: unset;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0px 20px 40px rgba(5, 122, 83, 0.08);
+  border: none;
+}
+
+.product__container {
+  display: flex;
+  align-items: center;
+  width: 55%;
+}
+
+.product__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product__price {
+  color: rgb(20, 111, 104);
+}
+
+.product__img {
+  width: 100%;
+  border-radius: 40px;
+}
+
+.header__burger-button {
+  width: 30px;
+  height: 21px;
+  background-color: transparent;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header__burger-button::before,
+.header__burger-button::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: rgb(20, 111, 104);
+}
+
+.header__burger-button .line {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(20, 111, 104);
+}
+
+.burger {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  z-index: 2;
+  transition: ease-in-out 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  overflow: scroll;
+}
+
+.burger .header__place {
+  display: flex;
+}
+
+.burger .header__place:hover {
+  color: rgb(240, 255, 250);
+}
+
+.burger.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.burger__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.burger a {
+  transition: ease-in-out 0.2s;
+}
+
+.burger a:hover {
+  color: rgb(20, 111, 104);
+}
+
+.burger__logo img {
+  width: 150px;
+}
+
+.burger__adress {
+  font-size: 16px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.burger__phone,
+.burger__email {
+  font-size: 16px;
+}
+
+.burger__email {
+  display: flex;
+  margin: 20px 0;
+}
+
+.burger__email > svg {
+  margin-right: 8px;
+}
+
+.burger__close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+}
+
+.burger__close::before,
+.burger__close::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(20, 111, 104);
+  transform: rotate(45deg);
+}
+
+.burger__close::after {
+  transform: rotate(-45deg);
 }
